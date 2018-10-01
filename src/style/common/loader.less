@@ -1,0 +1,198 @@
+// loading样式
+.sys-loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    .wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .curtains {
+        position: relative;
+        width: 200%;
+        height: 140%;
+        left: -50%;
+        top: -20%;
+        overflow: hidden;
+        transform: rotate(-10deg);
+    }
+
+    @bgColor: #171513;
+
+    .cut-line {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 1px; /*no*/
+        background-color: #fff;
+        top: 50%;
+        left: -77%;
+        margin-top: -1px; /*no*/
+    }
+
+    .top {
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        top: 0;
+        z-index: 1;
+        background-color: @bgColor;
+        border: 1px solid @bgColor;
+    }
+
+    .bottom {
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        background-color: @bgColor;
+        border: 1px solid @bgColor;
+    }
+
+    .container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .info {
+        position: relative;
+        top: -80px;
+
+        .photo {
+            @url: '../assets/img/common/loader/1.png';
+
+            height: image-height(@url);
+            width: image-width(@url);
+            background-image: url(@url);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+        }
+
+        .text {
+            color: #988571;
+            font-size: 24px;
+            line-height: 34px;
+
+            span {
+                color: #b77c4a;
+            }
+        }
+    }
+
+    .bar {
+        @url: '../assets/img/common/loader/bar.png';
+
+        height: image-height(@url);
+        width: image-width(@url);
+        left: (640 - image-width(@url)) / 2;
+        background-image: url(@url);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 130px;
+        text-align: center;
+
+        .box {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            // background-color: #fff;
+            box-sizing: border-box;
+            padding: 6px;
+        }
+
+        .tips {
+            color: #4b413d;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            line-height: image-height(@url);
+            font-size: 24px;
+            text-shadow: 1px 1px 3px #000; /*no*/
+        }
+
+        .progress {
+            background-color: #302b28;
+            width: 0%;
+            height: 100%;
+        }
+
+        .text {
+            position: absolute;
+            height: 100%;
+            right: 20px;
+            top: 0;
+            font-size: 12px;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+
+            span {
+                color: #fff;
+                font-size: 10px; /*no*/
+            }
+        }
+    }
+
+    .explain {
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        font-size: 24px;
+        text-align: center;
+        color: #454545;
+    }
+
+    .main {
+        @url: '../assets/img/common/loader/main.jpg';
+
+        height: image-height(@url);
+        width: image-width(@url);
+        background-image: url(@url);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+        display: none;
+        position: relative;
+        top: -100px;
+
+        .text {
+            position: absolute;
+            width: 100%;
+            bottom: -100px;
+            color: #a8a8a8;
+            font-weight: bold;
+            font-size: 24px;
+            animation: kf-show 1s linear infinite alternate;
+        }
+    }
+
+    .line {
+        height: 3px; /*no*/
+        width: 0%;
+        background-color: #d7b48c;
+    }
+}

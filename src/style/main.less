@@ -1,0 +1,29 @@
+﻿@import './config.less'; // 配置变量
+
+// 系统
+@import './common/keyframes.less'; // 动画
+@import './common/icon.less'; // icon
+@import './common/block.less'; // 横竖屏设置
+@import './common/music.less'; // 开场音乐开关样式
+@import './common/video.less'; // 开场动画样式
+@import './common/loader.less'; // loader样式
+
+//
+@import './common/common.less'; // 全局设置
+
+// ------------------------------------初始化全局样式-----------------------------------------
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    background-color: #fff;
+
+    &.lock {
+        overflow: hidden;
+    }
+}
+
+// ------------------------------------框架-----------------------------------------
